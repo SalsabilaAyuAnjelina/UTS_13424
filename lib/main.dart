@@ -1,21 +1,30 @@
 import 'package:flutter/material.dart';
-import 'menu_list_page.dart';
+import 'package:list_kuliner/home_page.dart';
+import 'package:list_kuliner/styles.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MainApp());
 }
 
-class MyApp extends StatelessWidget {
+class MainApp extends StatelessWidget {
+  const MainApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Menu App',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+      home: Scaffold(
+        backgroundColor: pageBgColor,
+        appBar: AppBar(
+          backgroundColor: headBgColor,
+          title: Text(
+            "Kuliner Apapun",
+            style: TextStyle(
+                color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),
+          ),
+          centerTitle: true,
+        ),
+        body: HomePage(),
       ),
-      home: MenuListPage(),
     );
   }
 }
-
